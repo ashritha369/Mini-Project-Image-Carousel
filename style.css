@@ -1,0 +1,64 @@
+.image-container {
+  background-image: url(./Images/background.jpg);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+.carousel {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* height of image plus buttons */
+  height: 530px;
+  /* width of image */
+  width: 500px;
+  /*  before overflow hidden, the images was displayed one by one, which was visible, but after the overflow hidden  it is showing hidden */
+  overflow: hidden;
+}
+
+/* although with overflow we saw second image below the first one */
+.image-container {
+  /* so by using flex, we displayed images horizontally by row , in this consition only one image is seen as the image is and container both is 500px  */
+  display: flex;
+  /* So basically we will transform image by using translate X to move images one after another by -X position to the left */
+  /* setting initial value as zero, using javascript we will change that */
+  transform: translateX(0px);
+  /* Now setting the transition on above transform property */
+  /* duration : 0.5s */
+  /* effect:ease-in-out */
+  transition: transform 0.5s ease-in-out;
+}
+
+.buttons-container {
+  /* align by default in row */
+  display: flex;
+  /* since aligned default by row, it will give the space between the button w.r.t  horizontal axis */
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  /* width of button */
+  width: 49.5%;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: none;
+}
